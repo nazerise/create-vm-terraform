@@ -1,5 +1,5 @@
 # create-vm-terraform
-terraform inint
+terraform init
 
 terraform plan
 
