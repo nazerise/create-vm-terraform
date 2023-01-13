@@ -1,4 +1,4 @@
 ---
-vcenter_hostname: 192.168.112.240
+vcenter_hostname: 127.0.0.1
 vcenter_username: root
-vcenter_password: Aa123456
+vcenter_password: 123456
