@@ -1,4 +1,4 @@
 ---
-kickstart_file: rocky/9/ks-rocky-kuber.cfg
+kickstart_file: ex-ks-rocky.cfg
 httpd_ip: 127.0.0.1
 
