@@ -14,6 +14,6 @@ Edit variables in roles/vmware/vars then run:
 
 ansible-playbook create.yml
 
-kickstart file example for installing rocky Linux:
+kickstart example for installing rocky Linux:
 
 ex-ks-rocky.cfg
