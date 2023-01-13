@@ -1,0 +1,27 @@
+---
+- name: Include vars esxi
+  include_vars:
+    file: esxi.yaml
+    name: esxi
+
+- name: Include vars host
+  include_vars:
+    file: host.yml
+    name: host
+
+- name: Include vars kickstart
+  include_vars:
+    file: kickstart.yml
+    name: kickstart
+
+- name: Handle boot parameter interactively
+  vmware_guest_sendkey:
+    hostname: 192.168.112.240
+    username: root
+    password: Aa123456
+    name: test
+    validate_certs: False
+    name: "test"
+    keys_send:
+      - TAB
+    string_send: " inst.ks=ftp://198.100.101.205/os-inst-cfgs/rocky/9/ks-rocky-kuber.cfg ip=192.168.112.246 netmask=255.255.255.0 gateway=192.168.112.1"

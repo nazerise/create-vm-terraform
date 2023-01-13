@@ -1,0 +1,5 @@
+---
+vm_host: test
+vm_ip: 192.168.112.246
+vm_netmask: 255.255.255.0
+vm_gateway: 192.168.112.1

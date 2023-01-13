@@ -1,0 +1,4 @@
+---
+kickstart_file: os-inst-cfgs/rocky/9/ks-rocky-kuber.cfg
+httpd_ip: 198.100.101.205
+

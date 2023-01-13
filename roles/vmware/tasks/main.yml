@@ -1,0 +1,36 @@
+---
+- name: Include vars esxi
+  include_vars: esxi.yml
+
+- name: Include vars host
+  include_vars: host.yml
+
+- name: Include vars kickstart
+  include_vars: kickstart.yml
+
+- name: Handle boot parameter interactively
+  vmware_guest_sendkey:
+    hostname: "{{ vcenter_hostname }}"
+    username: "{{ vcenter_username }}"
+    password: "{{ vcenter_password }}"
+    name: "{{ vm_host }}"
+    validate_certs: False
+    keys_send:
+      - TAB
+    string_send: " inst.ks=ftp://{{ httpd_ip }}/{{ kickstart_file }} ip={{ vm_ip }}  netmask={{ vm_netmask }} gateway={{ vm_gateway }} "
+
+- name: wait to put strings
+  wait_for:
+    timeout: 10
+
+- name: Install OS
+  vmware_guest_sendkey:
+    hostname: "{{ vcenter_hostname }}"
+    username: "{{ vcenter_username }}"
+    password: "{{ vcenter_password }}"
+    name: "{{ vm_host }}"
+    validate_certs: False
+    keys_send:
+      - ENTER
+      - ESC
+
