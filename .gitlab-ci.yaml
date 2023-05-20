@@ -1,0 +1,23 @@
+terraform-init:
+  stage: .pre
+  script:
+    - terraform init -reconfigure
+  artifacts:
+    name: "$CI_JOB_NAME"
+    untracked: true
+    paths:
+      - $CI_PROJECT_DIR/.terraform
+      - $CI_PROJECT_DIR/.terraform.lock.hcl
+  when: manual
+
+terraform-plan:
+  stage: test
+  script:
+    - terraform plan
+  when: manual
+
+terraform-apply:
+  stage: deploy
+  script:
+    - terraform apply -auto-approve
+  when: manual
