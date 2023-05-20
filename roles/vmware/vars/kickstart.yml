@@ -1,4 +1,4 @@
 ---
 kickstart_file: ex-ks-rocky.cfg
-httpd_ip: 127.0.0.1
+httpd_ip: https://git.example/project_url/-/raw/master
 
