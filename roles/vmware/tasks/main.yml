@@ -17,7 +17,7 @@
     validate_certs: False
     keys_send:
       - TAB
-    string_send: " inst.ks=ftp://{{ httpd_ip }}/{{ kickstart_file }} ip={{ vm_ip }}  netmask={{ vm_netmask }} gateway={{ vm_gateway }} "
+    string_send: " inst.ks={{ httpd_ip }}/{{ kickstart_file }} ip={{ vm_ip }}  netmask={{ vm_netmask }} gateway={{ vm_gateway }} "
 
 - name: wait to put strings
   wait_for:
