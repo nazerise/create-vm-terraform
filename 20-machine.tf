@@ -24,4 +24,5 @@ resource "vsphere_virtual_machine" "vm" {
        label = var.disk.label
        size  = var.disk.size
      }
+     scsi_type = "lsilogic-sas"
 }
